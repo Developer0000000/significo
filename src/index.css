@@ -1,0 +1,363 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Satoshi-Medium;
+    src: url('./assets/font/Satoshi-Medium.otf');
+}
+
+@font-face {
+    font-family: Satoshi-Regular;
+    src: url('./assets/font/Satoshi-Regular.otf');
+}
+
+@font-face {
+    font-family: NeueMachina-Ultrabold;
+    src: url('./assets/font/NeueMachina-Ultrabold.otf');
+}
+
+@font-face {
+    font-family: NeueMachina-Light;
+    src: url('./assets/font/NeueMachina-Light.otf');
+}
+
+@font-face {
+    font-family: NeueMachina-Regular;
+    src: url('./assets/font/NeueMachina-Regular.otf');
+}
+
+:root {
+    --black: #000;
+    --white: #fff;
+    --cyan: #AEDEE0;
+    --salmon: #EF9D71;
+
+    --dark_cyan: #1f2f32;
+    --dark_salmon: #532521;
+
+    --clip: 100%;
+
+    --transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+body[theme="black"] {
+    background-color: var(--black);
+    transition: var(--transition);
+}
+
+body[theme="black"] nav {
+    color: var(--white);
+}
+
+body[theme="black"] nav svg path {
+    fill: var(--white);
+    transition: var(--transition);
+}
+
+body[theme="black"] section {
+    color: var(--white);
+}
+
+
+
+
+body[theme="cyan"] {
+    background-color: var(--cyan);
+    transition: var(--transition);
+}
+
+body[theme="cyan"] nav {
+    background-color: var(--cyan);
+    color: var(--dark-cyan);
+}
+
+body[theme="cyan"] nav svg path {
+    transition: var(--transition);
+    fill: var(--black);
+}
+
+body[theme="cyan"] section {
+    color: var(--dark-cyan);
+}
+
+
+
+
+body[theme="salmon"] {
+    background-color: var(--salmon);
+    transition: var(--transition);
+}
+
+body[theme="salmon"] nav svg path {
+    transition: var(--transition);
+    fill: var(--black);
+}
+
+body[theme="salmon"] nav {
+    background-color: var(--salmon);
+    color: var(--dark-salmon);
+}
+
+body[theme="salmon"] section {
+    color: var(--dark-salmon);
+}
+
+
+
+
+body[theme="white"] {
+    background-color: var(--white);
+    transition: var(--transition);
+}
+
+body[theme="white"] nav {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+body[theme="white"] nav svg path {
+    transition: var(--transition);
+    fill: var(--black);
+}
+
+body[theme="white"] section {
+    color: var(--black);
+}
+
+
+/* down btn  */
+
+body[theme="white"] .btn_down div,
+body[theme="white"] .btn_down i {
+    border-color: var(--black);
+    color: var(--black);
+}
+
+body[theme="cyan"] .btn_down div,
+body[theme="cyan"] .btn_down i {
+    border-color: var(--black);
+    color: var(--black);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Satoshi-Medium;
+    /* cursor: none !important; */
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+*::selection {
+    background: var(--salmon);
+    color: #fff;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+nav {
+    /* background-color: var(--salmon); */
+}
+
+
+
+/* utils  */
+
+.font_satoshi {
+    font-family: Satoshi-Regular !important;
+}
+
+.font_neuemachina {
+    font-family: NeueMachina-Regular !important;
+}
+
+.font_neuemachina_light {
+    font-family: NeueMachina-Light !important;
+}
+
+.font_neuemachina_ultrabold {
+    font-family: NeueMachina-Ultrabold !important;
+}
+
+.text_shadow {
+    text-shadow: 1px 1px 10px #202020;
+}
+
+.bg_org {
+    background-color: #FF6014;
+}
+
+.border_dark_cyan {
+    border-color: var(--dark_cyan) !important;
+}
+
+.border_dark_salmon {
+    border-color: var(--dark_salmon) !important;
+}
+
+.transition_cards {
+    transition: all 3s linear;
+}
+
+.transition_card {
+    transition: all 1s linear;
+}
+
+
+
+
+
+
+.img_rotate {
+    animation: rotate 10s linear infinite;
+    transform-origin: center center;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+/* pages */
+
+.vid_cont {
+    clip-path: circle(var(--clip) at 50% 50%);
+}
+
+
+
+
+/*# button  */
+
+.button {
+    pointer-events: auto;
+    cursor: pointer;
+    font-family: inherit;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.button::before,
+.button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.button--calypso {
+    overflow: hidden;
+}
+
+.button--calypso span {
+    display: block;
+    position: relative;
+    z-index: 10;
+}
+
+.button--calypso:hover span {
+    animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+}
+
+.btn_org:hover span {
+    animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+}
+
+.btn_down:hover i {
+    animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+}
+
+@keyframes MoveScaleUpInitial {
+    to {
+        transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+        opacity: 0;
+    }
+}
+
+@keyframes MoveScaleUpEnd {
+    from {
+        transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+/* .button--calypso::before {
+    content: '';
+    background: #000;
+    width: 120%;
+    height: 0;
+    padding-bottom: 120%;
+    top: -110%;
+    left: -10%;
+    border-radius: 50%;
+    transform: translate3d(0, 68%, 0) scale3d(0, 0, 0);
+}
+
+.button--calypso:hover::before {
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+} */
+
+/* .button--calypso::after {
+    content: '';
+    background: #000;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+}
+
+.button--calypso:hover::after {
+    transform: translate3d(0, 0, 0);
+    transition-duration: 0.05s;
+    transition-delay: 0.4s;
+    transition-timing-function: linear;
+} */
+
+
+/* # underline */
+
+.link--metis::before {
+    transform-origin: 100% 50%;
+    transform: scale3d(0, 1, 1);
+    transition: transform 0.3s;
+    color: #F5F19C;
+    background-color: #F5F19C;
+    content: '';
+}
+
+.link--metis:hover::before {
+    transform-origin: 0% 50%;
+    transform: scale3d(1, 1, 1);
+    color: #F5F19C;
+    background-color: #F5F19C;
+}
