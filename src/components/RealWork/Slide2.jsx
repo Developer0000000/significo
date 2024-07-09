@@ -2,7 +2,7 @@ import React from 'react';
 
 const Slide2 = () => {
   return (
-    <div data-scroll className="slide w-full h-screen flex-shrink-0 relative">
+    <div className="slide w-full h-screen flex-shrink-0 relative">
 
       <div className='slide2_elem1 flex absolute top-[4rem] left-1/4'>
         <p className='w-[29%]'>

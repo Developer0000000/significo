@@ -44,14 +44,14 @@ const Insights = () => {
     return (
         <>
 
-            <section className="insights w-[90%] mx-auto h-screen relative mt-48 flex items-center">
+            <section className="insights w-[90%] mx-auto h-full sm:h-screen relative mt-48 flex flex-col sm:flex-row items-center">
 
-                <div className='ins_left w-[30%] h-screen'>
-                    <div className='w-48'>
+                <div className='ins_left sm:w-[30%] sm:h-screen order-last sm:order-1'>
+                    <div className='sm:w-48'>
                         <p ref={titleRef} className=''></p>
                     </div>
 
-                    <div className="absolute bottom-0 left-0">
+                    <div className="sm:absolute bottom-0 left-0 mt-10 sm:mt-0">
                         <h1 className='text-5xl font_neuemachina'>Explore <br /> Our Insights</h1>
                         <div className="mt-5">
                             <Button btnLayout={{ background: '#F5F19C' }} title='view all articles' borderColor='border-black' />
@@ -59,9 +59,9 @@ const Insights = () => {
                     </div>
                 </div>
 
-                <div className='ins_right'>
+                <div className='ins_right order-first sm:order-2'>
 
-                    <div className='flex items-center justify-end gap-10 -translate-y-10 -rotate-[20deg]'>
+                    <div className='flex flex-col sm:flex-row items-center sm:justify-end gap-10 sm:-translate-y-10 sm:-rotate-[20deg] my-[20%]'>
 
                         <article data-scroll data-scroll-speed="1.7" className='border border-black p-6 -translate-y-10 rounded-full flex flex-col items-center justify-center space-y-14'>
 

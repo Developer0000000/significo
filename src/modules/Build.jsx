@@ -23,6 +23,12 @@ const Build = () => {
                     end: 'center 60%',
                     scrub: 1,
                     // markers: true,
+                    onEnter: () => {
+                        document.body.setAttribute('theme', 'white');
+                    },
+                    onEnterBack: () => {
+                        document.body.setAttribute('theme', 'white');
+                    },
                 }
             });
 
@@ -37,7 +43,7 @@ const Build = () => {
 
     return (
         <>
-            <section className="build w-full relative flex justify-between items-center bg-[#F5F19C] px-14 py-20 mt-24 overflow-y-hidden">
+            <section className="build w-full relative flex flex-col sm:flex-row justify-between items-center bg-[#F5F19C] sm:px-14 py-20 mt-24">
 
                 <div>
                     <h2 ref={titleRef} className='text-5xl font_neuemachina'>
@@ -49,8 +55,8 @@ const Build = () => {
                     </div>
                 </div>
 
-                <div className='flex items-center gap-10'>
-                    <p className='text-lg'>
+                <div className='flex items-center gap-10 flex-col sm:flex-row'>
+                    <p className='text-lg mt-10 sm:mt-0'>
                         Find out how Significo’s healthcare <br />
                         technology expertise can take your digital <br />
                         experience to the next level. <br />
@@ -63,7 +69,7 @@ const Build = () => {
                             <svg width="40" height="40" viewBox="0 0 32 38" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16 0.703124C16 9.53968 8.83656 16.7031 0 16.7031" stroke="black" stroke-width="2"></path>
                                 <path d="M16 0.703124C16 9.53968 23.1634 16.7031 32 16.7031" stroke="black" stroke-width="2"></path>
-                                <path d="M16 0.703125L16 37.2746" stroke="currentColor" stroke-width="2"></path>
+                                <path d="M16 0.703125L16 37.2746" stroke="black" stroke-width="2"></path>
                             </svg>
                         </div>
                     </div>

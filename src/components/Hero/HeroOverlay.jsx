@@ -19,7 +19,7 @@ const HeroOverlay = () => {
         <>
             <section className="hero_overlay h-screen w-full relative overflow-hidden z-[-1]">
 
-                <div className='text-white hero_overlay_title absolute top-[16%] text-2xl text-center left-1/2 -translate-x-1/2'>
+                <div className='text-white hero_overlay_title absolute top-[16%] text-2xl text-center left-1/2 -translate-x-1/2 w-full'>
                     <h3 ref={titleRef}></h3>
                 </div>
 

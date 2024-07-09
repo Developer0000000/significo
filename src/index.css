@@ -148,14 +148,13 @@ body[theme="cyan"] .btn_down i {
     padding: 0;
     box-sizing: border-box;
     font-family: Satoshi-Medium;
-    /* cursor: none !important; */
+    cursor: none !important;
 }
 
 html,
 body {
     height: 100%;
     width: 100%;
-    box-sizing: border-box;
 }
 
 *::selection {
@@ -172,8 +171,21 @@ nav {
 }
 
 
+.container {
+    /* width: 600%; */
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    height: 100vh;
+}
 
-/* utils  */
+.spacer {
+    height: 50vh;
+}
+
+
+
+/*# utils  */
 
 .font_satoshi {
     font-family: Satoshi-Regular !important;
@@ -213,6 +225,15 @@ nav {
 
 .transition_card {
     transition: all 1s linear;
+}
+
+.transition_all {
+    transition: all .5s linear;
+}
+
+.menu_active {
+    top: 0;
+    transition: all .5s linear;
 }
 
 

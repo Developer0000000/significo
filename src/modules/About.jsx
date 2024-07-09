@@ -42,9 +42,9 @@ const About = () => {
     return (
         <>
             <section className="about w-full h-full relative">
-                <div className="w-[90%] mx-auto my-10">
+                <div className="w-[95%] sm:w-[90%] mx-auto my-10">
                     <h2 className='mb-10 text-5xl font_neuemachina text-center'>About Us</h2>
-                    <p ref={aboutRef} className='about_text text-black/10 text-[2.6rem] leading-[1.5] pb-10'>Working with Significo and their recommendation service has been a game-changer for our occupational prevention efforts. Our customers are extremely satisfied with the tool's impressive technical capabilities and data-driven approach. But what truly sets it apart is the intuitive and modern user experience it offers, making it a breeze for our clients to navigate. By leveraging this service, our customers have successfully tackled presenteeism and absenteeism.</p>
+                    <p ref={aboutRef} className='about_text text-black/10 text-[2rem] sm:text-[2.6rem] leading-[1.5] pb-10 sm:text-left text-center'>Working with Significo and their recommendation service has been a game-changer for our occupational prevention efforts. Our customers are extremely satisfied with the tool's impressive technical capabilities and data-driven approach. But what truly sets it apart is the intuitive and modern user experience it offers, making it a breeze for our clients to navigate. By leveraging this service, our customers have successfully tackled presenteeism and absenteeism.</p>
                 </div>
             </section>
         </>

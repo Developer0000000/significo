@@ -79,13 +79,13 @@ const Hero = () => {
                         delay: -0.6,
                     })
                     .to('.hero_row_lft', {
-                        translateX: '20%',
+                        translateX: window.innerWidth > 640 ? '20%' : '40%',
                         duration: 3,
                         ease: 'power4',
                         stagger: 0.08,
                     }, 'b')
                     .to('.hero_row_rgt', {
-                        translateX: '-40%',
+                        translateX: window.innerWidth > 641 ? '-40%' : '-80%',
                         duration: 3,
                         ease: 'power4',
                         stagger: 0.08,
@@ -109,7 +109,7 @@ const Hero = () => {
         <header id='hero__section' ref={headerRef} className='w-full h-screen relative'>
             <Video />
             <section>
-                <div className='absolute bottom-10 z-20 left-10'>
+                <div className='absolute sm:bottom-10 bottom-20 z-20 left-10'>
                     <p ref={heroSubtitleRef} className='hero_subtitle opacity-1'></p>
                 </div>
             </section>

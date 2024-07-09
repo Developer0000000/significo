@@ -20,7 +20,7 @@ const App = () => {
   return (
     <>
       <div className="hidden md:block">
-        {/* <CustomCursor /> */}
+        <CustomCursor />
       </div>
       <Preloader />
       <Navbar />
@@ -34,6 +34,7 @@ const App = () => {
         <Insights />
         <Build />
         <Footer />
+        {/* <Insights /> */}
       </main>
     </>
   )

@@ -108,6 +108,7 @@ const useLocomotive = (start) => {
             }
         });
 
+
         return () => {
             locoScrollRef.current.destroy();
             ScrollTrigger.removeEventListener("refresh", lsUpdate);
@@ -122,8 +123,8 @@ const useLocomotive = (start) => {
 
         const handleClick = () => {
             if (!locoScrollRef.current) return;
-            console.log("🚀 ~ handleClick ~ currentIndex:", currentIndex);
-            console.log(pages[currentIndex]);
+            // console.log("🚀 ~ handleClick ~ currentIndex:", currentIndex);
+            // console.log(pages[currentIndex]);
             locoScrollRef.current.scrollTo(`${pages[currentIndex]}`, { duration: 1, easing: [0.42, 0, 0.58, 1] });
             setCurrentIndex(prevIndex => {
                 if (prevIndex < pages.length - 1) {

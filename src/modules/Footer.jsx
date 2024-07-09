@@ -16,15 +16,21 @@ const Footer = () => {
                 scrollTrigger: {
                     trigger: 'footer',
                     start: 'top top',
-                    end: 'center 40%',
+                    end: 'top 40%',
                     scrub: 2,
                     // markers: true,
+                    onEnter: () => {
+                        document.body.setAttribute('theme', 'black');
+                    },
+                    onEnterBack: () => {
+                        document.body.setAttribute('theme', 'black');
+                    },
                 }
             })
                 .to(logoRef.current, {
                     delay: -1,
                     rotate: 0,
-                    bottom: '-2rem',
+                    bottom: window.innerWidth > 640 ? '-2rem' : '17.5rem',
                     duration: 1,
                     ease: 'sine.inOut',
                 })
@@ -47,7 +53,7 @@ const Footer = () => {
 
     return (
         <>
-            <footer className="footer w-full h-[105vh] relative px-14 pt-10 bg-black overflow-hidden">
+            <footer className="footer w-full h-[130vh] sm:h-[105vh] relative px-14 pt-10 bg-black overflow-hidden">
 
                 <div className="flex items-start justify-between w-full capitalize pt-10">
                     <ul className='space-y-3'>
@@ -58,7 +64,7 @@ const Footer = () => {
                         }
                     </ul>
 
-                    <div className=''>
+                    <div className='hidden sm:block'>
                         <p className='text-2xl pb-8 text-white font_neuemachina'>Join our mailing list for <br />
                             the latest updates.</p>
                         <div className='flex items-center gap-6'>
@@ -77,13 +83,22 @@ const Footer = () => {
 
                 </div>
 
-                <div ref={logoRef} className='absolute -bottom-full rotate-45 w-full left-0 px-14'>
+                <div className='sm:hidden block mt-14'>
+                    <p className='text-xl pb-8 text-white font_neuemachina text-center'>Join our mailing list for <br />
+                        the latest updates.</p>
+                    <div className='flex flex-col items-center gap-6'>
+                        <input className='py-4 px-4 text-black placeholder:text-black w-64 outline-none' type="text" placeholder='Enter your email address...' />
+                        <Button btnLayout={{ background: '#F5F19C' }} title='subscribe' borderColor='border-black' />
+                    </div>
+                </div>
+
+                <div ref={logoRef} className='absolute -bottom-20 sm:-bottom-full rotate-45 w-full left-0 px-14'>
                     <Logo width='100%' height='100%' />
                 </div>
 
                 <div className='absolute left-0 bottom-0 w-full px-14 bg-black'>
-                    <div className='flex justify-between items-center border-t-2 py-10'>
-                        <ul className='flex items-center gap-5 capitalize'>
+                    <div className='flex flex-col sm:flex-row sm:justify-between justify-start sm:items-center border-t-2 py-10'>
+                        <ul className='flex flex-col sm:flex-row sm:items-center justify-start gap-5 capitalize'>
                             {
                                 ['privacy policy', 'terms of use', 'trust'].map((item, index) => (
                                     <li key={index} className='text-sm text-white hover:text-[#F5F19C] underline underline-offset-4 hover:no-underline'>
@@ -92,7 +107,7 @@ const Footer = () => {
                                 ))
                             }
                         </ul>
-                        <p className="copyright_text text-white text-sm cursor-pointer hover:text-[#F5F19C]">© {new Date().getFullYear()} Significo. All rights reserved.</p>
+                        <p className="copyright_text text-white text-sm cursor-pointer sm:my-0 my-10 hover:text-[#F5F19C]">© {new Date().getFullYear()} Significo. All rights reserved.</p>
                         <ul className='flex items-center gap-5'>
                             <li className="text-lg text-white cursor-pointer hover:text-[#F5F19C]"><i class="text-xl ri-facebook-circle-fill"></i></li>
                             <li className="text-lg text-white cursor-pointer hover:text-[#F5F19C]"><i class="text-xl ri-instagram-line"></i></li>

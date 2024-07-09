@@ -6,7 +6,7 @@ const Preloader = () => {
 
     const loaderRef = useRef(null);
 
-    const dynamic = ['#fff', '#AEDEE0', '#EF9D71', '#1f2f32', '#F5F19C', '#FF6014'];
+    const dynamic = ['#fff', '#AEDEE0', '#EF9D71', '#E9BBFF', '#F5F19C', '#FF6014'];
 
     useEffect(() => {
 
